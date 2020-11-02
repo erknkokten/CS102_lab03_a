@@ -25,4 +25,9 @@ public class Triangle extends Shape {
     public double getPerimeter() {
         return a+b+c;
     }
+
+    public String toString(){
+        String str = "Triangle, a =" + a + ", b = " + b +", c = "+ c;
+        return str;
+    }
 }

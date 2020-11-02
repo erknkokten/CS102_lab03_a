@@ -15,4 +15,9 @@ public class Square extends Rectangle {
         return side*side;
     }
 
+    public String toString(){
+        String str = "Square, sides =" + side;
+        return str;
+    }
+
 }

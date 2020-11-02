@@ -23,4 +23,9 @@ public class Rectangle extends Shape{
     public double getPerimeter() {
         return 2*(width + length);
     }
+
+    public String toString(){
+        String str = "Rectangle, width =" + width + ", length = "+length;
+        return str;
+    }
 }
