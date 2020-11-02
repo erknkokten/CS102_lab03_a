@@ -4,7 +4,10 @@ public class ShapeTester {
         final String menu = "1- Create an empty set of Shapes\n" +
                 "2- Add a shape to array\n" +
                 "3- Print out the total perimeter and area of the shapes in ShapeContainer\n" +
-                "4- Print shapes' information\n";
+                "4- Print shapes' information\n" +
+                "5- Find the first Shape that contains a given x, y point and toggle its selected state\n" +
+                "6- Removes all selected shapes";
+
         ShapeContainer shapes = null;
         Scanner scan = new Scanner(System.in);
         int selection;
@@ -53,6 +56,18 @@ public class ShapeTester {
             }
             else if(selection == 4){
                 System.out.println(shapes.toString());
+            }
+            else if(selection == 5){
+                System.out.println("Select points x and y.\n X:");
+                int x = scan.nextInt();
+                System.out.println("Y:");
+                int y = scan.nextInt();
+
+                shapes.toggleSelected(x,y);
+
+            }
+            else if(selection == 6){
+                shapes.removeSelected();
             }
         }while(selection != 0);
     }

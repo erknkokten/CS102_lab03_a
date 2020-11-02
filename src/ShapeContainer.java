@@ -37,8 +37,29 @@ public class ShapeContainer {
     public String toString(){
         String str = "";
         for(int i=0;i< shapes.size();i++){
-            str = str + "\n" + shapes.get(i).toString();
+            if(shapes.get(i) != null)
+                str = str + "\n" + shapes.get(i).toString();
         }
         return str;
+    }
+
+    public void toggleSelected(int x, int y){
+        Shape shape;
+        for(int i=0;i< shapes.size();i++){
+            shape = shapes.get(i).contains(x,y);
+            shape.setSelected(!shape.getSelected());
+            shapes.set(i, shape);
+        }
+    }
+
+    public void removeSelected(){
+        for(int i=0;i< shapes.size();i++){
+
+            if(shapes.get(i).getSelected()){
+                shapes.remove(i);
+                i--;
+            }
+
+        }
     }
 }
