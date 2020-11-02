@@ -3,6 +3,8 @@ public class Rectangle extends Shape{
     //instances
     int width;
     int length;
+    double x;
+    double y;
 
     /**
      * Constructor
@@ -27,5 +29,22 @@ public class Rectangle extends Shape{
     public String toString(){
         String str = "Rectangle, width =" + width + ", length = "+length;
         return str;
+    }
+
+    @Override
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
+    }
+
+    @Override
+    public void setLocation(double x, double y) {
+        this.x = x;
+        this.y = y;
+
     }
 }

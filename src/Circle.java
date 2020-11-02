@@ -2,6 +2,8 @@ import java.lang.Math.*;
 public class Circle extends Shape{
 
     int radius;
+    double x;
+    double y;
 
     public Circle(int radius){
         this.radius = radius;
@@ -20,5 +22,22 @@ public class Circle extends Shape{
     public String toString(){
         String str = "Circle, radius =" + radius;
         return str;
+    }
+
+    @Override
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
+    }
+
+    @Override
+    public void setLocation(double x, double y) {
+        this.x = x;
+        this.y = y;
+
     }
 }

@@ -1,6 +1,8 @@
 public class Square extends Rectangle {
     
     int side;
+    double x;
+    double y;
     
     /**
      * Constructor
@@ -18,6 +20,22 @@ public class Square extends Rectangle {
     public String toString(){
         String str = "Square, sides =" + side;
         return str;
+    }
+    @Override
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
+    }
+
+    @Override
+    public void setLocation(double x, double y) {
+        this.x = x;
+        this.y = y;
+
     }
 
 }

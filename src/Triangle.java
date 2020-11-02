@@ -2,7 +2,8 @@ public class Triangle extends Shape {
     //Instances
     int a;
     int b;
-    int c;
+    int c;double x;
+    double y;
 
     /**
      * Constructor
@@ -29,5 +30,22 @@ public class Triangle extends Shape {
     public String toString(){
         String str = "Triangle, a =" + a + ", b = " + b +", c = "+ c;
         return str;
+    }
+
+    @Override
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
+    }
+
+    @Override
+    public void setLocation(double x, double y) {
+        this.x = x;
+        this.y = y;
+
     }
 }
