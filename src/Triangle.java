@@ -119,7 +119,7 @@ public class Triangle extends Shape {
         }
 
         double slope = (top_y - shifted_y)/(top_x - shifted_x);
-        if(shifted_x <= (double)a/2 && shifted_x>= -(double)a/2 && shifted_y <= top_y && shifted_y >= 0 ){
+        if( shifted_y <= top_y && shifted_y >= 0 ){
             if((slope > 0 && slope >= bigger)||(slope < 0 && slope <= smaller)){
                 return this;
             }
