@@ -69,11 +69,33 @@ public class Triangle extends Shape {
      */
     @Override
     public Shape contains( int x, int y){
-        //KENDİME NOT: EĞİM DÜŞÜNEREK YAPABİLİRSİN.
-        if(Math.abs(x-this.x) <= Math.abs(a+b)/2 &&  Math.abs(y-this.y) <= Math.abs(a-c)/2 )
-            return this;
-        //if does not contain
+
+        double top_x = (Math.pow(c,2) - Math.pow(b,2))/(-2*a);
+        double top_y = Math.sqrt(Math.pow(c,2)-Math.pow((top_x-(double)a/2),2));
+        double slope1 = top_y/(top_x-(double)a/2), slope2 = top_y/(top_x+(double)a/2);
+
+        double bigger, smaller;
+        if(slope1 < slope2) {
+            bigger = slope2;
+            smaller = slope1;
+        }
+        else{
+            bigger = slope1;
+            smaller = slope2;
+        }
+
+        double slope = (top_y - y)/(top_x - x);
+        if(x <= (double)a/2 && x>= -(double)a/2 && y <= top_y && y >= 0 ){
+            if((slope > 0 && slope >= bigger)||(slope < 0 && slope <= smaller)){
+                return this;
+            }
+            else{
+                selected = !selected;
+                return this;
+            }
+        }
         selected = !selected;
         return this;
+
     }
 }
