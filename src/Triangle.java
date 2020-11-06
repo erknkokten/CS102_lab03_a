@@ -92,14 +92,12 @@ public class Triangle extends Shape {
     }
 
 
-
-    /*public Shape contains( int x, int y){
-        //find h/3
-        double d = (Math.pow(c,2) - Math.pow(b,2) + Math.pow(a,2))/(2*a);
-        double h_over3 = Math.sqrt(Math.pow(c,2)-Math.pow(d,2))/3;
-
-    }*/
-
+    /**
+     * assumed that x and y of the object set in the midst of the base length.
+     * @param x
+     * @param y
+     * @return
+     */
     @Override
     public Shape contains( int x, int y){
         double shifted_x = x-this.x;
