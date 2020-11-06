@@ -19,12 +19,21 @@ public class Triangle extends Shape {
         x=0;
         y=0;
     }
+
+    /**
+     * returns area
+     * @return area
+     */
     @Override
     public double getArea() {
         double s = (a+b+c)/2;
         return Math.sqrt(s*(s-a)*(s-b)*(s-c));
     }
 
+    /**
+     * returns perimeter
+     * @return
+     */
     @Override
     public double getPerimeter() {
         return a+b+c;
@@ -35,16 +44,28 @@ public class Triangle extends Shape {
         return str;
     }
 
+    /**
+     * returns x coord.
+     * @return x
+     */
     @Override
     public double getX() {
         return x;
     }
-
+    /**
+     * returns y coord.
+     * @return y
+     */
     @Override
     public double getY() {
         return y;
     }
 
+    /**
+     * sets location of the shape
+     * @param x
+     * @param y
+     */
     @Override
     public void setLocation(int x, int y) {
         this.x = x;
@@ -52,24 +73,37 @@ public class Triangle extends Shape {
 
     }
 
+    /**
+     * checks if selected
+     * @return
+     */
     @Override
     public boolean getSelected() {
         return selected;
     }
+
+    /**
+     * sets as selected
+     * @param selected
+     */
     @Override
     public void setSelected(boolean selected){
         this.selected = selected;
     }
 
-    /**
-     * assume that x and y instances are in middle of the shape
-     * @param x
-     * @param y
-     * @return
-     */
+
+
+    /*public Shape contains( int x, int y){
+        //find h/3
+        double d = (Math.pow(c,2) - Math.pow(b,2) + Math.pow(a,2))/(2*a);
+        double h_over3 = Math.sqrt(Math.pow(c,2)-Math.pow(d,2))/3;
+
+    }*/
+
     @Override
     public Shape contains( int x, int y){
-
+        double shifted_x = x-this.x;
+        double shifted_y = y-this.y;
         double top_x = (Math.pow(c,2) - Math.pow(b,2))/(-2*a);
         double top_y = Math.sqrt(Math.pow(c,2)-Math.pow((top_x-(double)a/2),2));
         double slope1 = top_y/(top_x-(double)a/2), slope2 = top_y/(top_x+(double)a/2);
@@ -84,8 +118,8 @@ public class Triangle extends Shape {
             smaller = slope2;
         }
 
-        double slope = (top_y - y)/(top_x - x);
-        if(x <= (double)a/2 && x>= -(double)a/2 && y <= top_y && y >= 0 ){
+        double slope = (top_y - shifted_y)/(top_x - shifted_x);
+        if(shifted_x <= (double)a/2 && shifted_x>= -(double)a/2 && shifted_y <= top_y && shifted_y >= 0 ){
             if((slope > 0 && slope >= bigger)||(slope < 0 && slope <= smaller)){
                 return this;
             }

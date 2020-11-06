@@ -19,12 +19,18 @@ public class Rectangle extends Shape{
         x=0;
         y=0;
     }
-
+    /**
+     * returns area
+     * @return area
+     */
     @Override
     public double getArea() {
         return width*length;
     }
-
+    /**
+     * returns perimeter
+     * @return perimeter
+     */
     @Override
     public double getPerimeter() {
         return 2*(width + length);
@@ -34,28 +40,45 @@ public class Rectangle extends Shape{
         String str = "Rectangle, width =" + width + ", length = "+length+ ", Selected: " + getSelected();
         return str;
     }
-
+    /**
+     * returns X coordinate
+     * @return x coordinate
+     */
     @Override
     public double getX() {
         return x;
     }
-
+    /**
+     * returns y coordinate
+     * @return y coordinate
+     */
     @Override
     public double getY() {
         return y;
     }
-
+    /**
+     * sets the location of x and y
+     * @param x
+     * @param y
+     */
     @Override
     public void setLocation(int x, int y) {
         this.x = x;
         this.y = y;
 
     }
-
+    /**
+     * chekcs if the shape is selected
+     * @return
+     */
     @Override
     public boolean getSelected() {
         return selected;
     }
+    /**
+     * sets the shape as selected
+     * @param selected
+     */
     @Override
     public void setSelected(boolean selected){
         this.selected = selected;

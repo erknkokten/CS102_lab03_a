@@ -16,6 +16,10 @@ public class Square extends Rectangle {
         y=0;
     }
 
+    /**
+     * returns area
+     * @return area
+     */
     public double getArea(){
         return side*side;
     }
@@ -24,16 +28,30 @@ public class Square extends Rectangle {
         String str = "Square, sides =" + side+ ", Selected: " + getSelected();
         return str;
     }
+
+    /**
+     * returns x coord.
+     * @return x
+     */
     @Override
     public double getX() {
         return x;
     }
 
+    /**
+     * returns y coord.
+     * @return y
+     */
     @Override
     public double getY() {
         return y;
     }
 
+    /**
+     * sets the location of the shape
+     * @param x
+     * @param y
+     */
     @Override
     public void setLocation(int x, int y) {
         this.x = x;
@@ -41,10 +59,19 @@ public class Square extends Rectangle {
 
     }
 
+    /**
+     * checks if selected situation
+     * @return
+     */
     @Override
     public boolean getSelected() {
         return selected;
     }
+
+    /**
+     * sets as selected
+     * @param selected
+     */
     @Override
     public void setSelected(boolean selected){
         this.selected = selected;
@@ -52,9 +79,9 @@ public class Square extends Rectangle {
 
     /**
      * assume that x and y instances are in middle of the shape
-     * @param x
-     * @param y
-     * @return
+     * @param x coord.
+     * @param y coord.
+     * @return shape
      */
     @Override
     public Shape contains( int x, int y){

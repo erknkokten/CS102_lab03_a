@@ -4,19 +4,22 @@ public class ShapeContainer {
 
     //Instances
     ArrayList<Shape> shapes ;
-
+    //constructor
     public ShapeContainer(){
 
         shapes  = new ArrayList<Shape>();
     }
-
+    /**
+     * adds shape
+     * @param s shape
+     */
     public void add( Shape s){
         shapes.add(s);
     }
 
     /**
      * Returns the sum of areas of the shapes it hold
-     * @return
+     * @return area
      */
     public double getArea(){
         double area = 0;
@@ -25,7 +28,10 @@ public class ShapeContainer {
         }
         return area;
     }
-
+    /**
+     * Returns the sum of perimeters of the shapes it hold
+     * @return perimeter
+     */
     public double getPerimeter(){
         double perimeter = 0;
         for(int i=0;i< shapes.size();i++){
@@ -43,6 +49,11 @@ public class ShapeContainer {
         return str;
     }
 
+    /**
+     * Toggles selected if x and y are inside the shape
+     * @param x coord.
+     * @param y coord.
+     */
     public void toggleSelected(int x, int y){
         Shape shape;
         for(int i=0;i< shapes.size();i++){
@@ -52,6 +63,9 @@ public class ShapeContainer {
         }
     }
 
+    /**
+     * deletes selected shapes in the shape container
+     */
     public void removeSelected(){
         for(int i=0;i< shapes.size();i++){
 
